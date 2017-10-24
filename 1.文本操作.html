@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!-- 1.{{}}  文本差值-->
+    <!--文本差值 {{}} Mustache-->
+    <!--特别常用-->
+    <p>{{message}}</p>
+
+<!-- 2.v-text  赋值给 textContent-->
+    <p v-text="message"></p>
+
+<!-- 3.v-html  展示 html 代码-->
+    <!--当别人给你 html 代码需要展示的时候   要把 代码覆给 v-html -->
+    <!--v-html 读取一段html代码-->
+    <!--常用于数据内容为 html 时-->
+    <!--列如：新闻，文章-->
+    <!--更新元素的 innerHTML 。注意：内容按普通 HTML 插入 - 不会作为 Vue 模板进行编译。-->
+    <!--如果试图使用 v-html 组合模板，可以重新考虑是否通过使用组件来替代。-->
+    <div v-html="html"></div>
+
+<!-- 4.v-bind  单向数据绑定 或 属性绑定-->
+    <!--1.v-bind 数据绑定，THML的属性-->
+    <!--  v-bind 内容可以使用表达式-->
+    <!--2.v-bind 可以缩写-->
+    <!--  缩写 :  -->
+    <div :id="box"></div>
+
+<!-- 5.v-model 双向数据绑定-->
+    <!-- 常用于 input 标签-->
+    <!--在表单控件或者组件上创建双向绑定。-->
+
+    <!--注意-->
+    <!--v-model 会忽略所有表单元素的 value、checked、selected 特性的初始值。-->
+    <!--因为它会选择 Vue 实例数据来作为具体的值。你应该通过 JavaScript 在组件的 data 选项中声明初始值。-->
+    <!--注意-->
+    <!--对于要求 IME (如中文、日语、韩语等) (IME 意为“输入法”)的语言，-->
+    <!--你会发现 v-model 不会在 ime 输入中得到更新。如果你也想实现更新，请使用 input 事件。-->
+
+    <input type="text" v-model="username">
+</div>
+</body>
+<script type="application/javascript">
+new Vue({
+    el:'#app',
+    data:{
+        message:'Hello,Vue.js',
+        html:'<h1>我是一个html</h1>',
+        box:'box',
+        username:''
+    }
+})
+</script>
+</html>

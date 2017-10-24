@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- v-for 循环渲染 -->
+<!-- v-for 即可遍历 数组 ， 也能遍历 JSON 对象-->
+<!-- 1. 遍历的过程都可以获取下标-->
+<!-- 2. 对象遍历的获取内容顺序为 value key index-->
+<!--    数组遍历的获取内容顺序为 value index-->
+<!-- :key=''  key 唯一标识 -->
+<!-- 3. 循环过程中，一般会给元素赋值一个 key-->
+<!--    key 代表唯一标识-->
+<!--    当数组书=顺序发生变化时，通过key值可以找到对应元素-->
+<!--    例： 购物车 某管理系统 -->
+
+<!--v-for 默认行为试着不改变整体，而是替换元素。
+迫使其重新排序的元素，你需要提供一个 key 的特殊属性：-->
+
+<!--用 v-for 把一个数组对应为一组元素-->
+<h2 v-for="title in titleArray">{{title}}</h2>
+</body>
+</html>
